@@ -241,7 +241,7 @@ public class SkriptClasses {
 						if (enchs != null) {
 							b.append("|");
 							for (final EnchantmentType e : enchs) {
-								b.append("#" + EnchantmentIds.ids.get(e.getType()));
+								b.append("#" + EnchantmentUtils.ids.get(e.getType()));
 								b.append(":" + e.getLevel());
 							}
 						}
@@ -752,7 +752,7 @@ public class SkriptClasses {
 						if (split.length != 2)
 							return null;
 						try {
-							final Enchantment ench = EnchantmentIds.enchantments[Integer.parseInt(split[0])];
+							final Enchantment ench = EnchantmentUtils.enchantments[Integer.parseInt(split[0])];
 							if (ench == null)
 								return null;
 							return new EnchantmentType(ench, Integer.parseInt(split[1]));
