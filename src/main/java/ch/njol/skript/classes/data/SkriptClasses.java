@@ -37,7 +37,7 @@ import org.eclipse.jdt.annotation.Nullable;
 import ch.njol.skript.aliases.Aliases;
 import ch.njol.skript.aliases.ItemData;
 import ch.njol.skript.aliases.ItemType;
-import ch.njol.skript.bukkitutil.EnchantmentIds;
+import ch.njol.skript.bukkitutil.EnchantmentUtils;
 import ch.njol.skript.classes.Arithmetic;
 import ch.njol.skript.classes.Changer;
 import ch.njol.skript.classes.ClassInfo;
