@@ -7,9 +7,6 @@
 # in this script restricts spawing of enchanted items.
 #
 
-aliases:
-	blacklisted = TNT, bedrock, obsidian, mob spawner, lava, lava bucket
-
 # This version of the command requires that the player has the permission skript.give,
 # and blacklisted items are only allowed if the player has the permission skript.give.bypassblacklist
 command /item <items>:
@@ -23,7 +20,7 @@ command /item <items>:
 			give arguments to player
 		else:
 			loop arguments:
-				loop-item is not blacklisted:
+				loop-item is not tnt or bedrock or obsidian or mob spawner or lava or lava bucket:
 					give loop-item to player
 				else:
 					message "<red>%loop-item%<reset> is blacklisted and thus cannot be spawned"
@@ -43,7 +40,7 @@ command /item2 <items>:
 				player does not have the permission "skript.give.enchanted":
 					message "You don't have permission to spawn enchanted items!"
 					stop
-			player has permission "skript.give.%ID of loop-item%":
+			player has permission "skript.give.%loop-item%":
 				give loop-item to player
 			else:
 				message "You don't have permission to spawn <red>%loop-item%<reset>!"
@@ -56,7 +53,7 @@ command /give <item types> to <player>:
 	trigger:
 		send "Giving %argument 1% to %argument 2%" to player
 		loop argument 1:
-			player has permission "skript.give.%ID of loop-item%":
+			player has permission "skript.give.%loop-item%":
 				give loop-item to argument 2
 				send "You recieved %loop-item% from %player%" to argument 2
 			else:
