@@ -3,7 +3,7 @@
 #
 
 aliases:
-	custom helmets = iron block, gold block, diamond block # Change this to anything you'd like
+	custom helmets = minecraft:iron_block, minecraft:gold_block, minecraft:diamond_block # Change this to anything you'd like
 
 on inventory click:
 	inventory action is place all or nothing
